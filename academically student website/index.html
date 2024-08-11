@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcademicAlly</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sign Up Screen -->
+    <div id="signup-screen" class="auth-screen" style="display: none;">
+        <div class="auth-image"></div>
+        <div class="auth-form">
+            <h2>Sign Up</h2>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Create Password">
+            <input type="password" placeholder="Confirm Password">
+            <button onclick="goToHome()">Sign Up</button>
+            <button class="home-btn" onclick="goToHome()">Home</button>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="auth-screen" style="display: none;">
+        <div class="auth-image"></div>
+        <div class="auth-form">
+            <h2>Login</h2>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button onclick="goToHome()">Login</button>
+            <button class="home-btn" onclick="goToHome()">Home</button>
+        </div>
+    </div>
+
+    <!-- Main Screen -->
+    <div id="main-screen">
+        <h2>Main Menu</h2>
+        <div class="card" onclick="showCalculator('cgpa')">CGPA Calculator</div>
+        <div class="card" onclick="showCalculator('credits')">Credits Calculator</div>
+        <div class="card" onclick="showSection('events')">Upcoming Events</div>
+        <div class="card" onclick="showSection('clubs')">Clubs</div>
+    </div>
+
+    <!-- CGPA Calculator -->
+    <div id="cgpa-calculator">
+        <h3>CGPA Calculator</h3>
+        <p>Calculate your CGPA by entering the details below:</p>
+        <form id="cgpa-form">
+            <div class="form-group">
+                <label for="course1">Course 1:</label>
+                <input type="text" id="course1" placeholder="Course Name">
+                <input type="text" id="credit1" placeholder="Credits">
+                <input type="text" id="grade1" placeholder="Grade">
+            </div>
+            <div class="form-group">
+                <label for="course2">Course 2:</label>
+                <input type="text" id="course2" placeholder="Course Name">
+                <input type="text" id="credit2" placeholder="Credits">
+                <input type="text" id="grade2" placeholder="Grade">
+            </div>
+            <button type="button" class="submit-btn" onclick="calculateCGPA()">Calculate CGPA</button>
+        </form>
+        <div class="result-box">
+            <h4>Your calculated CGPA is <span id="cgpa-result">...</span></h4>
+        </div>
+        <button class="home-btn" onclick="goToMain()">Home</button>
+    </div>
+
+    <!-- Credits Calculator -->
+    <div id="credits-calculator">
+        <h3>Credits Calculator</h3>
+        <p>Calculate your earned credits by entering the details below:</p>
+        <form id="credits-form">
+            <div class="form-group">
+                <label for="course-credits1">Course 1:</label>
+                <input type="text" id="course-credits1" placeholder="Course Name">
+                <input type="text" id="credits-earned1" placeholder="Credits Earned">
+            </div>
+            <div class="form-group">
+                <label for="course-credits2">Course 2:</label>
+                <input type="text" id="course-credits2" placeholder="Course Name">
+                <input type="text" id="credits-earned2" placeholder="Credits Earned">
+            </div>
+            <button type="button" class="submit-btn" onclick="calculateCredits()">Calculate Credits</button>
+        </form>
+        <div class="result-box">
+            <h4>Your total earned credits are <span id="credits-result">...</span></h4>
+        </div>
+        <button class="home-btn" onclick="goToMain()">Home</button>
+    </div>
+
+    <!-- Upcoming Events -->
+    <div id="events-section">
+        <h3>Upcoming Events</h3>
+        <ul>
+            <li>
+                <strong>Science Fair</strong> - September 15th
+                <p>A platform for students to showcase their scientific projects and innovations. Open to all students.</p>
+            </li>
+            <li>
+                <strong>Hackathon</strong> - September 22nd
+                <p>A 24-hour coding marathon where participants solve real-world problems through programming.</p>
+            </li>
+            <li>
+                <strong>Art Exhibition</strong> - October 1st
+                <p>Explore creative artworks by fellow students, ranging from paintings to digital art.</p>
+            </li>
+            <li>
+                <strong>Sports Day</strong> - October 10th
+                <p>Compete in various sports events and show off your athletic skills. Prizes to be won!</p>
+            </li>
+        </ul>
+        <button class="home-btn" onclick="goToMain()">Home</button>
+    </div>
+
+    <!-- Clubs Information -->
+    <div id="clubs-section">
+        <h3>Clubs</h3>
+        <ul>
+            <li>
+                <strong>Science Club</strong>: 
+                <p>Engage in scientific exploration, experiments, and discussions. Meet every Wednesday at 4 PM.</p>
+            </li>
+            <li>
+                <strong>Robotics Club</strong>: 
+                <p>Design, build, and program robots. Weekly meetings on Fridays at 5 PM.</p>
+            </li>
+            <li>
+                <strong>Art Club</strong>: 
+                <p>Express yourself through various art forms. Open studio every Thursday at 3 PM.</p>
+            </li>
+            <li>
+                <strong>Sports Club</strong>: 
+                <p>Join for various sports activities and competitions. Practice sessions every Saturday morning.</p>
+            </li>
+        </ul>
+        <button class="home-btn" onclick="goToMain()">Home</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
